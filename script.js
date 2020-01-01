@@ -75,15 +75,13 @@ function validateForm() {
   if (repayment < 6) {
     points = points + 5;
   }
-  console.log(points);
 
 // if points >= 30, loan is successful, else it is not
-
 if(points >= 30){
   alert("Your Loan has been Approved")
 }
 else{
-  alert("You do not have sufficient points for this loan")
+  alert("You do not have sufficient points for this loan, you have " + points + "points")
 }
   
 
