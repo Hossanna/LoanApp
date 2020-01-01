@@ -32,6 +32,12 @@ function validateForm() {
   let loanLimit = document.getElementById("loanLimit");
   let loanAmount = document.getElementById("loanAmount");
 
+  form.style.display = "none"
+  myForm2.style.display = "block"
+  username.innerText = `${name}`
+  balance.innerText = `#${revenue}`
+  loanLimit.innerText = `#${maxLoanAmount}`
+  loanAmount.innerText = `#${loan}`
 
 
 
@@ -48,37 +54,37 @@ function validateForm() {
 
   
 
-  form.style.display = "none"
-  myForm2.style.display = "block"
-  username.innerText = `${name}`
-  balance.innerText = `#${revenue}`
-  loanLimit.innerText = `#${maxLoanAmount}`
-  loanAmount.innerText = `#${loan}`
 
-  // //steps to calculate points
+  //steps to calculate points
 
-  // // balance in account more than amount needed for loan, 10pts, else, -10pts
-  // if (revenue > loan) {
-  //   points = points + 10;
-  // } else if (revenue < loan) {
-  //   points = points - 10;
-  // } else {
-  //   points = 0;
-  // }
+  // balance in account more than amount needed for loan, 10pts, else, -10pts
+  if (revenue > loan) {
+    points = points + 10;
+  } else if (revenue < loan) {
+    points = points - 10;
+  } else {
+    points = 0;
+  }
 
-  // // 6 months credit history, 10pts
-  // if (history >= 6) {
-  //   points = points + 10;
-  // }
+  // 6 months credit history, 10pts
+  if (history >= 6) {
+    points = points + 10;
+  }
 
-  // // loan repayment, below 6 months, 5 pts
-  // if (repayment < 6) {
-  //   points = points + 5;
-  // }
-  // console.log(points);
+  // loan repayment, below 6 months, 5 pts
+  if (repayment < 6) {
+    points = points + 5;
+  }
+  console.log(points);
 
+// if points >= 30, loan is successful, else it is not
 
-
+if(points >= 30){
+  alert("Your Loan has been Approved")
+}
+else{
+  alert("You do not have sufficient points for this loan")
+}
   
 
   return true;
