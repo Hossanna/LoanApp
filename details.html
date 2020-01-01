@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+<body class="form-body">
+    <form class="myForm" id="form" name="form">
+        <p class="logo">
+            <img src="./images/logo.png" alt=""> 
+        </p>
+        <div>
+            <h2>Apply for a Business Loan</h2>
+            <p>Find out how much loan you can get</p>
+        </div>
+        
+        <div>
+            <input type="text" name="loan" id="loan" placeholder="How much do you need?" autocomplete="money"  > <br>
+        </div>
+        <div>
+            <input type="text" name="revenue" id="revenue" placeholder="Monthly Revenue" autocomplete="money"  > <br>
+        </div>
+        <div>
+            <input type="text" name="fname" id="fname" placeholder="Full Name" autocomplete="name"  > <br>
+        </div>
+        <div>
+            <input type="email" name="email" id="email" placeholder="Email Address" autocomplete="email"  > <br>
+        </div>
+        <div>
+            <input type="text" name="phone" id="phone" placeholder="Phone Number" autocomplete="tel"  > <br>
+        </div>
+
+        <div>
+            <label for="history">What is your credit history (in months)?</label>
+            <input type="number" name="history" id="history" autocomplete="cc-number">
+        </div>
+        <div>
+            <label for="deposit">When was your last deposit date?</label>
+            <input type="date" name="deposit" id="deposit" autocomplete="date" >
+        </div>
+        <div>
+            <label for="collection">When was your last collection date?</label>
+            <input type="date" name="collection" id="collection" autocomplete="date" >
+        </div>
+        <div>
+            <label for="repayment">How long (in months) did it take before you repaid your last loan?</label>
+            <input type="number" name="repayment" id="repayment" autocomplete="date" >
+        </div>
+
+        <select name="accountType" id="accountType">
+            <option value="select">Select Account Type</option>
+            <option value="savings">Savings</option>
+            <option value="current">Current</option>
+
+        </select>
+
+        <input type="" class="submit-btn" onclick={validateForm()} value="Submit"  > 
+    </form>
+    <!-- action="./loan.html" method="post" -->
+
+    <div class="myForm myForm2" id="myForm2">
+        <p class="logo">
+            <img src="./images/logo.png" alt=""> 
+        </p>
+        <div>
+            <h1>Welcome back, <span id="username"></span></h1>
+        </div>
+
+        <div class="div1">
+            <div class="flex">
+                <div>
+                    <p>Flexi Cash</p>
+                    <span class="span" id="balance"></span>
+                </div>
+                <button>My Account</button>
+            </div>
+            <div class="flex">
+                <div>
+                    <p>Flexi Limit</p>
+                    <span class="span" id="loanLimit"></span>
+                </div>
+                <!-- <button>Borrow Now</button> -->
+            </div>
+        </div>
+
+        <div class="div1">
+            <div class="flex">
+                <div>
+                    <p>Repay Soon</p>
+                    <span class="span" id=""></span>
+                </div>
+                <!-- <button>My Account</button> -->
+            </div>
+            <div class="flex">
+                <div>
+                    <p>Loan Amount</p>
+                    <span class="span" id="loanAmount"></span>
+                </div>
+                <button>Borrow Now</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
