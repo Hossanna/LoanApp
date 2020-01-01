@@ -1,5 +1,6 @@
 // alert("connected")
 let points = 0;
+  
 
 // let today = new Date()
 // today.setFullYear(2024, 1, 23)
@@ -16,28 +17,43 @@ let points = 0;
 // console.log(today.getDate() - oneMonth.getDate());
 
 function validateForm() {
-  let form = document.getElementById("form");
-  let myForm2 = document.getElementById("myForm2");
   let loan = document.getElementById("loan").value;
   let revenue = document.getElementById("revenue").value;
   let name = document.getElementById("fname").value;
+  let form = document.getElementById("form");
+  let myForm2 = document.getElementById("myForm2");
   let username = document.getElementById("username");
-  let loanLimit = document.getElementById("loanLimit");
-  let maxLoanAmount = (45 / 100) * revenue * 12;
-  let loanAmount = getElementById("loanAmount");
   let balance = document.getElementById("balance");
   let history = document.getElementById("history").value;
   let deposit = document.getElementById("deposit").value;
   let collection = document.getElementById("collection").value;
   let repayment = document.getElementById("repayment").value;
+  let maxLoanAmount = (45 / 100) * revenue * 12;
+  let loanLimit = document.getElementById("loanLimit");
+  let loanAmount = document.getElementById("loanAmount");
 
 
-  // form.style.display = "none"
-  // myForm2.style.display = "block"
-  // username.innerText = `${name}`
-  // balance.innerText = `#${revenue}`
-  // loanLimit.innerText = `#${maxLoanAmount}`
-  // loanAmount.innerText = `#${loan}`
+
+
+  // console.log(points);
+  // console.log(loan);
+  // console.log(revenue);
+  // console.log(name);
+  // console.log(maxLoanAmount);
+  // console.log(collection);
+  // console.log(history);
+  // console.log(deposit);
+  // console.log(repayment);
+  // console.log(points);
+
+  
+
+  form.style.display = "none"
+  myForm2.style.display = "block"
+  username.innerText = `${name}`
+  balance.innerText = `#${revenue}`
+  loanLimit.innerText = `#${maxLoanAmount}`
+  loanAmount.innerText = `#${loan}`
 
   // //steps to calculate points
 
@@ -63,15 +79,7 @@ function validateForm() {
 
 
 
-  console.log(loan);
-  console.log(revenue);
-  console.log(name);
-  console.log(maxLoanAmount);
-  console.log(collection);
-  console.log(history);
-  console.log(deposit);
-  console.log(repayment);
-  console.log(points);
+  
 
   return true;
   
