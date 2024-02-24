@@ -177,12 +177,12 @@ section p{
     justify-content: space-between;
     align-items: center;
 }
-.div1 button{
-    padding: 1%;
+.div1 button {
+    padding: 5px 20px;
     color: #fff;
-    width: 20%;
+    width: max-content;
     font-size: .9em;
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     border-radius: 50px;
     border: 1px solid #80808097;
     background-color: #56c087;
