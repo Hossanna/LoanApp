@@ -46,7 +46,7 @@ function validateForm() {
   
 
 
-  //last loan collection date, above 6 months, 10pts
+  // last loan collection date, above 6 months, 10pts
   if (doSomething() == true){
     points = points+10
   }
