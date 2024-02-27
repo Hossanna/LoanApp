@@ -36,7 +36,7 @@
 
         <div>
             <label for="history">What is your credit history (in months)?</label>
-            <input type="number" name="history" id="history" autocomplete="cc-number">
+            <input type="number" min="0" name="history" id="history" autocomplete="cc-number">
         </div>
         <div>
             <label for="deposit">When was your last deposit date?</label>
@@ -48,7 +48,7 @@
         </div>
         <div>
             <label for="repayment">How long (in months) did it take before you repaid your last loan?</label>
-            <input type="number" name="repayment" id="repayment" autocomplete="date" >
+            <input type="number" min="0" name="repayment" id="repayment" autocomplete="date" >
         </div>
 
         <select name="accountType" id="accountType">
