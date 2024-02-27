@@ -22,156 +22,144 @@ function validateForm() {
 
   let points = 0;
 
-  //steps to calculate points
-
-  // balance in account more than amount needed for loan, 10pts, else, -10pts
-  if (revenue > loan) {
-    points = points + 10;
-  } else if (revenue < loan) {
-    points = points - 10;
-  }
-  
-
-  // 6 months credit history, 10pts
-  if (history >= 6) {
-    points = points + 10;
-  }
-  
-
-
-  // last deposit date, within a month, 5pts
-  if (doSomethingg() == true){
-    points = points+5
-  }
-  
-
-
-  // last loan collection date, above 6 months, 10pts
-  if (doSomething() == true){
-    points = points+10
-  }
-  
-
-
-  // loan repayment, below 6 months, 5 pts
-  if (repayment < 6 && repayment > 0) {
-    points = points + 5;
-  }
-  
-
-
-  // current, 10pts, savings, 5pts
-  if (accountType == "savings") {
-    points = points + 5;
-  } else if (accountType == "current") {
-    points = points + 10;
-  }
-  
-
-
-  // if points >= 30, loan is successful, else it is not
-  if (points >= 30) {
-    alert("Your Loan has been Approved, you have " + points + "points");
-    form.style.display = "none";
-    myForm3.style.display = "block";
-    usernamee.innerText = `${name}`;
-    loanAmountt.innerText = `#${loan}`;
-
+  if (
+    loan == "" ||
+    revenue == "" ||
+    name == "" ||
+    history == "" ||
+    repayment == "" ||
+    accountType == ""
+  ) {
+    form.style.border = "1px solid red"
+    alert("You must fill all fields");
+    return false;
   } else {
-    alert(
-      "You do not have sufficient points for this loan, you have " +
-        points +
-        "points"
-    );
-    form.style.display = "none";
-    myForm2.style.display = "block";
-    username.innerText = `${name}`;
-    balance.innerText = `#${revenue}`;
-    loanLimit.innerText = `#${maxLoanAmount}`;
-    loanAmount.innerText = `#${loan}`;
+    //steps to calculate points
+
+    // balance in account more than amount needed for loan, 10pts, else, -10pts
+    if (revenue > loan) {
+      points = points + 10;
+    } else if (revenue < loan) {
+      points = points - 10;
+    }
+
+    // 6 months credit history, 10pts
+    if (history >= 6) {
+      points = points + 10;
+    }
+
+    // last deposit date, within a month, 5pts
+    if (doSomethingg() == true) {
+      points = points + 5;
+    }
+
+    // last loan collection date, above 6 months, 10pts
+    if (doSomething() == true) {
+      points = points + 10;
+    }
+
+    // loan repayment, below 6 months, 5 pts
+    if (repayment < 6 && repayment > 0) {
+      points = points + 5;
+    }
+
+    // current, 10pts, savings, 5pts
+    if (accountType == "savings") {
+      points = points + 5;
+    } else if (accountType == "current") {
+      points = points + 10;
+    }
+
+    // if points >= 30, loan is successful, else it is not
+    if (points >= 30) {
+      alert("Your Loan has been Approved, you have " + points + "points");
+      form.style.display = "none";
+      myForm3.style.display = "block";
+      usernamee.innerText = `${name}`;
+      loanAmountt.innerText = `#${loan}`;
+    } else {
+      alert(
+        "You do not have sufficient points for this loan, you have " +
+          points +
+          "points"
+      );
+      form.style.display = "none";
+      myForm2.style.display = "block";
+      username.innerText = `${name}`;
+      balance.innerText = `#${revenue}`;
+      loanLimit.innerText = `#${maxLoanAmount}`;
+      loanAmount.innerText = `#${loan}`;
+    }
+
+    let today = new Date();
+
+    function addOneMonth(today) {
+      today.setMonth(today.getMonth() + 1);
+
+      const f = new Intl.DateTimeFormat("en-us", {
+        dateStyle: "full",
+      });
+      return f.format(today);
+    }
+
+    repaymentDate.innerText = addOneMonth(today);
+
+    repaymentDatee.innerText = addOneMonth(today);
+
+    return true;
   }
-
-  let today = new Date();
-
-  function addOneMonth(today) {
-    today.setMonth(today.getMonth() + 1);
-
-    const f = new Intl.DateTimeFormat("en-us", {
-      dateStyle: "full",
-    });
-    return f.format(today);
-  }
-  
-  repaymentDate.innerText = addOneMonth(today);
-  
-  repaymentDatee.innerText = addOneMonth(today);
-  
-
-  return true;
-
-  
 }
 
-
-
 let today = new Date();
-  // console.log(today);
+// console.log(today);
 
 let newDate = subtract6Months(today);
-  // console.log(newDate);
+// console.log(newDate);
 
-  function subtract6Months(today) {
-    today.setMonth(today.getMonth() - 6);
-    return today;
+function subtract6Months(today) {
+  today.setMonth(today.getMonth() - 6);
+  return today;
+}
+
+function doSomething() {
+  var collection = document.getElementById("collection").value;
+
+  let date1 = new Date(collection);
+  let date2 = newDate;
+
+  // console.log(date1);
+  // console.log(date2);
+
+  if (date1 < date2) {
+    return true;
+  } else {
+    return false;
   }
-
-function doSomething(){
-    var collection = document.getElementById("collection").value
-
-    let date1 = new Date(collection)
-    let date2 = newDate
-
-    // console.log(date1);
-    // console.log(date2);
-
-    if (date1 < date2){
-      return true
-    }
-    else{
-      return false
-    }
-
-  
 }
 
 let todayy = new Date();
-  // console.log(today);
+// console.log(today);
 
 let newDatee = subtract1Month(todayy);
-  // console.log(newDate);
+// console.log(newDate);
 
-  function subtract1Month(todayy) {
-    todayy.setMonth(todayy.getMonth() - 1);
-    return todayy;
-  }
-
-function doSomethingg(){
-    var deposit = document.getElementById("deposit").value
-
-    let date1 = new Date(deposit)
-    let date2 = newDatee
-
-    // console.log(date1);
-    // console.log(date2);
-
-    if (date1 > date2){
-      return true
-    }
-    else{
-      return false
-    }
-
-  
+function subtract1Month(todayy) {
+  todayy.setMonth(todayy.getMonth() - 1);
+  return todayy;
 }
 
+function doSomethingg() {
+  var deposit = document.getElementById("deposit").value;
 
+  let date1 = new Date(deposit);
+  let date2 = newDatee;
+
+  // console.log(date1);
+  // console.log(date2);
+
+  if (date1 > date2) {
+    return true;
+  } else {
+    return false;
+  }
+}

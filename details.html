@@ -19,39 +19,39 @@
         </div>
         
         <div>
-            <input type="text" name="loan" id="loan" placeholder="How much do you need?" autocomplete="money"  > <br>
+            <input type="text" name="loan" id="loan" placeholder="How much do you need?" autocomplete="money" required > <br>
         </div>
         <div>
-            <input type="text" name="revenue" id="revenue" placeholder="Monthly Revenue" autocomplete="money"  > <br>
+            <input type="text" name="revenue" id="revenue" placeholder="Monthly Revenue" autocomplete="money" required > <br>
         </div>
         <div>
-            <input type="text" name="fname" id="fname" placeholder="Full Name" autocomplete="name"  > <br>
+            <input type="text" name="fname" id="fname" placeholder="Full Name" autocomplete="name" required  > <br>
         </div>
         <div>
-            <input type="email" name="email" id="email" placeholder="Email Address" autocomplete="email"  > <br>
+            <input type="email" name="email" id="email" placeholder="Email Address" autocomplete="email" required > <br>
         </div>
         <div>
-            <input type="text" name="phone" id="phone" placeholder="Phone Number" autocomplete="tel"  > <br>
+            <input type="text" name="phone" id="phone" placeholder="Phone Number" autocomplete="tel" required > <br>
         </div>
 
         <div>
             <label for="history">What is your credit history (in months)?</label>
-            <input type="number" min="0" name="history" id="history" autocomplete="cc-number">
+            <input type="number" min="0" name="history" id="history" autocomplete="cc-number" required>
         </div>
         <div>
             <label for="deposit">When was your last deposit date?</label>
-            <input type="date" name="deposit" id="deposit" autocomplete="date" >
+            <input type="date" name="deposit" id="deposit" autocomplete="date" required>
         </div>
         <div>
             <label for="collection">When was your last collection date?</label>
-            <input type="date" name="collection" id="collection" autocomplete="date" >
+            <input type="date" name="collection" id="collection" autocomplete="date" required>
         </div>
         <div>
             <label for="repayment">How long (in months) did it take before you repaid your last loan?</label>
-            <input type="number" min="0" name="repayment" id="repayment" autocomplete="date" >
+            <input type="number" min="0" name="repayment" id="repayment" autocomplete="date" required>
         </div>
 
-        <select name="accountType" id="accountType">
+        <select name="accountType" id="accountType" required >
             <option value="select">Select Account Type</option>
             <option value="savings">Savings</option>
             <option value="current">Current</option>
